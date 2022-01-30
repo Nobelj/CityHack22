@@ -41,19 +41,19 @@ $(document).ready(function(){
             } else {
                 filter[i].frequency.value = 3650;
             }
-                console.log("Filter: "+filter[i].frequency.value);
-            var gainCalc = Math.max(1 - 2.5*0.0002*Math.hypot(topoffset,leftoffset), 0);
-            if(gainCalc > 0) {
-                gain[i].gain.value = Math.max(0.5*(gainCalc - Math.abs(stereo[i].pan.value*0.3)), 0);
-                console.log("Gain: "+gainCalc);
+                //console.log("Filter: "+filter[i].frequency.value);
+            var gainCalc = Math.max(1 - (0.15*Math.log(Math.hypot(topoffset,leftoffset))), 0);
+            if(gainCalc >= 0) {
+                gain[i].gain.value = Math.max(gainCalc - Math.abs(stereo[i].pan.value*0.05), 0);
+                //console.log("Gain: "+gainCalc);
             }
             if (isNaN(Math.cos(Math.atan(topoffset/-leftoffset)))) {
                 stereo[i].pan.value = 0;
             } else {
-                console.log(gainCalc);
+                //console.log(gainCalc);
                 stereo[i].pan.value = Math.sign(-leftoffset)*Math.cos(Math.atan(topoffset*0.5/(-leftoffset)))*0.75;
             }   
-                console.log("Stereo: "+stereo[i].pan.value);
+                //console.log("Stereo: "+stereo[i].pan.value);
         }
     }
 });
