@@ -1,5 +1,5 @@
 
-
+function rmain() {
 $(document).ready(function(){
 
     var len = $(document.getElementsByTagName('audio')).length;
@@ -58,4 +58,4 @@ $(document).ready(function(){
     }
 });
     
-
+}

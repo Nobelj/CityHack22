@@ -31,4 +31,5 @@ As COVID-19 continues to become a greater problem, the need for online school ha
 
 ## Link
 - https://youtu.be/pj4ovn123BQ
-- https://spatialaudioo.000webhostapp.com/
+- https://ishaankchopra.github.io/CityHack22/
+- https://spatialaudioo.000webhostapp.com/ --> This website is just for visualizing, actual features like Eye Detection and Spatial Audio will be added later in the post-development phase
